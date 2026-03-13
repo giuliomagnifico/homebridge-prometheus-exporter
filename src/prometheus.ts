@@ -69,11 +69,10 @@ export class PrometheusServer implements HttpServer {
         }
 
         return {
-            statusCode: 503,
-            headers: withHeaders(textContentType, { 'Retry-After': String(retryAfterWhileDiscovery) }),
-            body: 'Metrics discovery pending',
-        }
-    }
+    statusCode: 200,
+    headers: withHeaders(textContentType, {}),
+    body: '',
+}
 
     onMetrics(): HttpResponse {
         return {
